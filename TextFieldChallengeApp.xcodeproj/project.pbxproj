@@ -12,6 +12,9 @@
 		98A8685A2098E90500262962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A868582098E90500262962 /* Main.storyboard */; };
 		98A8685C2098E90600262962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A8685B2098E90600262962 /* Assets.xcassets */; };
 		98A8685F2098E90600262962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A8685D2098E90600262962 /* LaunchScreen.storyboard */; };
+		98A86869209904C500262962 /* ZipCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A86868209904C500262962 /* ZipCodeTextFieldDelegate.swift */; };
+		98A8686B209904E300262962 /* CashTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8686A209904E300262962 /* CashTextFieldDelegate.swift */; };
+		98A8686D2099050500262962 /* RandomColorTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8686C2099050500262962 /* RandomColorTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		98A8685B2098E90600262962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A8685E2098E90600262962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98A868602098E90600262962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A86868209904C500262962 /* ZipCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		98A8686A209904E300262962 /* CashTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTextFieldDelegate.swift; sourceTree = "<group>"; };
+		98A8686C2099050500262962 /* RandomColorTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColorTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		98A868532098E90500262962 /* TextFieldChallengeApp */ = {
 			isa = PBXGroup;
 			children = (
-				98A868542098E90500262962 /* AppDelegate.swift */,
 				98A868562098E90500262962 /* ViewController.swift */,
+				98A868542098E90500262962 /* AppDelegate.swift */,
+				98A8686E20990E3100262962 /* TextFieldsDelegates */,
 				98A868582098E90500262962 /* Main.storyboard */,
-				98A8685B2098E90600262962 /* Assets.xcassets */,
 				98A8685D2098E90600262962 /* LaunchScreen.storyboard */,
+				98A8685B2098E90600262962 /* Assets.xcassets */,
 				98A868602098E90600262962 /* Info.plist */,
 			);
 			path = TextFieldChallengeApp;
+			sourceTree = "<group>";
+		};
+		98A8686E20990E3100262962 /* TextFieldsDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				98A86868209904C500262962 /* ZipCodeTextFieldDelegate.swift */,
+				98A8686A209904E300262962 /* CashTextFieldDelegate.swift */,
+				98A8686C2099050500262962 /* RandomColorTextFieldDelegate.swift */,
+			);
+			path = TextFieldsDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				98A868572098E90500262962 /* ViewController.swift in Sources */,
+				98A8686B209904E300262962 /* CashTextFieldDelegate.swift in Sources */,
+				98A86869209904C500262962 /* ZipCodeTextFieldDelegate.swift in Sources */,
 				98A868552098E90500262962 /* AppDelegate.swift in Sources */,
+				98A8686D2099050500262962 /* RandomColorTextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
