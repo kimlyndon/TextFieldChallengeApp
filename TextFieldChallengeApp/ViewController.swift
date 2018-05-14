@@ -46,8 +46,8 @@ class ViewController: UIViewController {
     }
     
 //Edit switch action and toggle.
-   
-    @IBAction func toggleTheTextEditor(_ sender: Any) {
+    @IBAction func editSwitch(_ sender: Any) {
+    
         if !(sender as! UISwitch).isOn {
             self.textField3.resignFirstResponder()
         }
