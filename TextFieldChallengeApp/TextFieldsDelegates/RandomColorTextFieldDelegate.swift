@@ -11,6 +11,7 @@ import UIKit
 
 //Define class, subclass, and declare text field delegate protocol.
 class RandomColorTextFieldDelegate: NSObject, UITextFieldDelegate {
+    var isEditable = true
     
 //Create an array of colors
     let colors: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple, .brown]
@@ -18,7 +19,7 @@ class RandomColorTextFieldDelegate: NSObject, UITextFieldDelegate {
 //create a method that will return a random color
     func randomColor() -> UIColor {
         let randomIndex = Int(arc4random() % UInt32(colors.count))
-        //choose colors from array using random number as index
+//choose colors from array using random number as index
         return colors[randomIndex]
     }
 // Color of text in text field set to random color.
@@ -27,6 +28,8 @@ class RandomColorTextFieldDelegate: NSObject, UITextFieldDelegate {
        
         return true
     }
-
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return isEditable
+    }
     }
 
