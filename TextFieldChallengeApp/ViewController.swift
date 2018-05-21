@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 //Properties
     let zipCodeDelegate = ZipCodeTextFieldDelegate()
     let cashDelegate = CashTextFieldDelegate()
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 //Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        
         
 // Set the three delegates
@@ -32,11 +33,13 @@ class ViewController: UIViewController {
     self.textField2.delegate = self.cashDelegate
     self.textField3.delegate = self.randomColorDelegate
 //Set the edit switch
-    self.editSwitch.setOn(false, animated: false)
-    }
+    self.editSwitch.setOn(true, animated: true)
+
+}
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             var newText = textField.text! as NSString
             newText = newText.replacingCharacters(in: range, with: string) as NSString
+            
             
             // hide the label if the newText will be an empty string
             self.characterCountLabel.isHidden = (newText.length == 0)
@@ -49,10 +52,13 @@ class ViewController: UIViewController {
         }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return self.editSwitch.isOn
+        if self.editSwitch.isOn {
+        return true;
+    }else{
+        return false;
         
         }
-    
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
@@ -62,15 +68,10 @@ class ViewController: UIViewController {
  
     
     @IBAction func toggleEditSwitch(_ sender: Any) {
-    
         if !(sender as! UISwitch).isOn {
             self.textField3.resignFirstResponder()
         }
-       
-    }
-
-    
-
-
+        (textField3.delegate as? RandomColorTextFieldDelegate)?.isEditable = (sender as AnyObject).isOn
+}
 
 }
